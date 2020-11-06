@@ -1,12 +1,7 @@
 package com.company;
-
 import java.util.Random;
 
-public class Main {
-
-    public Main() {
-    }
-//creation des objets+initialisation des parametres
+public class GamePlay {
     public static void main(String[] args) {
         Hero aventurier = new Hero(200, 100);
         Equipement epee = new Equipement("epee", 0);
@@ -17,7 +12,7 @@ public class Main {
         System.out.println("Bienvenue dans le dongeon");
         System.out.println("Vous avez " + aventurier.getPointDeVie() + " Point de vie, " + aventurier.getFlasqueDeau() + " flasques pour combatre vos ennemies et une ");
 
-       // i=room ;si pointdevie > room-->room+1 sinon game over(pas besoin de creer une classe)
+        // i=room ;si pointdevie > room-->room+1 sinon game over(pas besoin de creer une classe)
         int i = 1;
         do {
 
@@ -31,10 +26,10 @@ public class Main {
                 int nbrAl = random.nextInt(2 );
 //si nbr=0 = sorcier sinon barbare
                 if (nbrAl == 0) {
-                     enemieActuel = sorciere;
-                     //sinon barbare
+                    enemieActuel = sorciere;
+                    //sinon barbare
                 } else {
-                     enemieActuel = barbare;
+                    enemieActuel = barbare;
                 }
 
 
@@ -80,41 +75,38 @@ public class Main {
 
                 }
 
-                                   //IDEM avec sorciere
+                //IDEM avec sorciere
                 else {
                     do {
 
 
-                    aventurier.setFlasqueDeau((int) (5 + (Math.random() * 30)));
-                    int degat = aventurier.getFlasqueDeau();
-                    sorciere.setPointDeVie(sorciere.getPointDeVie() - degat);
-                    System.out.println("Il reste à la sorciere " + sorciere.getPointDeVie());
+                        aventurier.setFlasqueDeau((int) (5 + (Math.random() * 30)));
+                        int degat = aventurier.getFlasqueDeau();
+                        sorciere.setPointDeVie(sorciere.getPointDeVie() - degat);
+                        System.out.println("Il reste à la sorciere " + sorciere.getPointDeVie());
 
-                    sorciere.setPointAttaque((int) (5 + (Math.random() * 30)));
-                    int pointDattaque = sorciere.getPointAttaque();
-                    aventurier.setPointDeVie(aventurier.getPointDeVie() - pointDattaque);
-                    System.out.println("il vous reste " + aventurier.getPointDeVie());
+                        sorciere.setPointAttaque((int) (5 + (Math.random() * 30)));
+                        int pointDattaque = sorciere.getPointAttaque();
+                        aventurier.setPointDeVie(aventurier.getPointDeVie() - pointDattaque);
+                        System.out.println("il vous reste " + aventurier.getPointDeVie());
 
-                } while (aventurier.getPointDeVie() >= 0 && sorciere.getPointDeVie() >= 0);
-                if (aventurier.getPointDeVie() > 0 && i==5) {
-                    System.out.println("Bravo vous avez gagné ! =)");
-                }else if (aventurier.getPointDeVie() > 0 ){
-                    System.out.println("Bravo tu passes à la pièce suivante");
-                    aventurier.setPointDeVie(200);
-                    sorciere.setPointDeVie(160);
-                    i+=1;
+                    } while (aventurier.getPointDeVie() >= 0 && sorciere.getPointDeVie() >= 0);
+                    if (aventurier.getPointDeVie() > 0 && i==5) {
+                        System.out.println("Bravo vous avez gagné ! =)");
+                    }else if (aventurier.getPointDeVie() > 0 ){
+                        System.out.println("Bravo tu passes à la pièce suivante");
+                        aventurier.setPointDeVie(200);
+                        sorciere.setPointDeVie(160);
+                        i+=1;
+                    }
+                    else {
+                        System.out.println("Game Over");
+                        i = 6;
+                    }
                 }
-                else {
-                    System.out.println("Game Over");
-                    i = 6;
-                }
-            }
-        } } while (i <= 5 && aventurier.getPointDeVie() > 0);
+            } } while (i <= 5 && aventurier.getPointDeVie() > 0);
 
 
     }
 
-
 }
-
-
