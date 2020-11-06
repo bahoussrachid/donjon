@@ -9,12 +9,9 @@ public class Main {
 //creation des objets+initialisation des parametres
     public static void main(String[] args) {
         Hero aventurier = new Hero(200, 100);
-        Equipement epee = new Equipement("epee", 0);
+
         Monsters sorciere = new Monsters("witch", 180, 0);
-        Monsters barbare = new Monsters("olaf", 160, 0);
-//Degat et point attaque sont à 0 car ils prendront les valeurs du random
-        aventurier.setFlasqueDeau(10);
-        aventurier.setPointDeVie(200);
+        Monsters barbare = new Monsters("olaf", 160, 0);//Degat et point attaque sont à 0 car ils prendront les valeurs du random
 
 
         System.out.println("Bienvenue dans le dongeon");
@@ -44,8 +41,8 @@ public class Main {
                 //Si barbare faire le do while
 
                 if (enemieActuel == barbare) {
-                   
-                    do { //Faire des degats aleatoire grace au random
+
+                    do { //Faire des degats aleatoire grace au random à l'aide de l'epee
                         epee.setDegat((int) (5 + (Math.random() * 30)));//comme .set dega=0 on lui donne la valeur de math.random
                         int degat = epee.getDegat(); //.get renvoi la valeur au int nommer degat
                         barbare.setPointDeVie(barbare.getPointDeVie() - degat);//vie - degat
