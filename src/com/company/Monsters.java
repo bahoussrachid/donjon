@@ -2,19 +2,17 @@ package com.company;
 
 public class Monsters {
 
-    // donnez des attributs, pv d'attaque. crée une classe
-    //
-
+    //initialisation de l'objet
     private String nom;
     private int pointDeVie;
     private int pointAttaque;
-
+//constructor
     public Monsters(String nom, int pointDeVie, int pointAttaque) {
         this.nom = nom;
         this.pointDeVie = pointDeVie;
         this.pointAttaque = pointAttaque;
     }
-
+//getter setter
     public String getNom() {
         return nom;
     }

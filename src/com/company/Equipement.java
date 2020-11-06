@@ -3,15 +3,15 @@ package com.company;
 import java.util.Random;
 
 public class Equipement {
-
+//initialisation de l'objet
     private String nom_Arme;
     private int degat;
-
+    //constructor
     public Equipement(String nom_Arme, int degat) {
         this.nom_Arme = nom_Arme;
         this.degat = degat;
     }
-
+//getter.setter
     public String getNom_Arme() {
         return nom_Arme;
     }

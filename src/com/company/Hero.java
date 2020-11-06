@@ -1,17 +1,17 @@
 package com.company;
 
 public class Hero {
-
+    //initialisation de l'objet
     private int pointDeVie = 200;
     private int flasqueDeau;
-
+//constructor
     public Hero(int ptv, int fde) {
         this.pointDeVie = ptv;
         this.flasqueDeau = fde;
     }
-
+//getter.setter
     public int getPointDeVie() {
-        //accède à l'objet en privé
+
         return pointDeVie;
     }
 
